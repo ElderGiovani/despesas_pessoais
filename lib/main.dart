@@ -20,7 +20,7 @@ class ExpensesApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-  final transactions = [
+  final _transactions = [
     Transaction(
       id: 't1',
       title: 'Novo Tênis de Corrida',
@@ -42,14 +42,14 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 255, 44, 7),
         title: const Text('Despesas pessoais'),
       ),
-      body: const Column(
+      body: Column(
         mainAxisAlignment:
             MainAxisAlignment.spaceAround, //spaceAround:deixa espço ao redor//
         //eixo principal"vertical"
         crossAxisAlignment: CrossAxisAlignment.stretch, // stretch:estica
         //eixo secundario "horizontal"
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             child: Card(
               color: Color.fromARGB(255, 18, 196, 228),
               elevation: 5,
@@ -57,12 +57,12 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Column(
-            children: transactions.map((tr) {
+            children: _transactions.map((tr) {
               return Card(
                 child: Text(tr.title),
               );
-            }),
-          ),
+            }).toList(),
+          )
         ],
       ),
     );
