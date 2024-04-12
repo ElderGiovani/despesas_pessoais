@@ -27,22 +27,24 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 255, 176, 7),
         title: const Text('Despesas pessoais'),
       ),
-      body: const Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //spaceAround:deixa espaço ao redoreixo principal"vertical"
-        crossAxisAlignment: CrossAxisAlignment.stretch, // stretch:estica
-        //eixo secundario "horizontal"
-        children: <Widget>[
-          SizedBox(
-            // SizedBox mais para espaçamento
-            child: Card(
-              color: Color.fromARGB(255, 185, 10, 216),
-              elevation: 5,
-              child: Text('Gráfico'),
+      body: const SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //spaceAround:deixa espaço ao redoreixo principal"vertical"
+          crossAxisAlignment: CrossAxisAlignment.stretch, // stretch:estica
+          //eixo secundario "horizontal"
+          children: <Widget>[
+            SizedBox(
+              // SizedBox mais para espaçamento
+              child: Card(
+                color: Color.fromARGB(255, 185, 10, 216),
+                elevation: 5,
+                child: Text('Gráfico'),
+              ),
             ),
-          ),
-          TransactionUser(),
-        ],
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }
