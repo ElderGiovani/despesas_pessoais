@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'components/transaction_user.dart';
 
@@ -19,9 +21,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 7, 255, 243),
-        title: const Text('Despesas Pessoais'),
-      ),
+          backgroundColor: const Color.fromARGB(255, 7, 255, 243),
+          title: const Text('Despesas Pessoais'),
+          actions: <Widget>[
+            IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+          ]),
       body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -37,6 +41,11 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

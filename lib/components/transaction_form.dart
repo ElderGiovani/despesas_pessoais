@@ -36,8 +36,8 @@ class TransactionForm extends StatelessWidget {
             ),
             TextField(
               controller: valueController,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true), //  para funcionar tanto no android e no ios.
               onSubmitted: (_) => _submitForm(),
               decoration: const InputDecoration(
                 labelText: 'Valor (R\$)',

@@ -12,7 +12,8 @@ class TransactionList extends StatelessWidget {
     return SizedBox(
       height: 300,
       child: ListView.builder(
-        itemCount: transactions.length,
+        // ListView.builder - usar quando nao sabemos o tamanho que pode chegar a lista
+        itemCount: transactions.length, //passar  o   itemCount e  itemBuilder
         itemBuilder: (ctx, index) {
           final tr = transactions[index];
           return Card(
